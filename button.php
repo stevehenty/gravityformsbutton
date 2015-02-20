@@ -51,13 +51,13 @@ function gf_button_shortcode( $shortcode_string, $attributes, $content ){
 	$ajax_url = admin_url( 'admin-ajax.php' );
 
 	$html = sprintf( '<button id="gf_button_get_form_%d">%s</button>', $form_id, $a['text'] );
-	$html .= sprintf( '<div id="gf_button_form_container_%d"></div>', $form_id );
+	$html .= sprintf( '<div id="gf_button_form_container_%d" style="display:none;"></div>', $form_id );
 	$html .= "<script>
 				(function (SHFormLoader, $) {
 				$('#gf_button_get_form_{$form_id}').click(function(){
 					var button = $(this);
 					$.get('{$ajax_url}?action=gf_button_get_form&form_id={$form_id}',function(response){
-						$('#gf_button_form_container_{$form_id}').html(response);
+						$('#gf_button_form_container_{$form_id}').html(response).fadeIn();
 						button.remove();
 					});
 				});
