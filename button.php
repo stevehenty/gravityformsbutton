@@ -45,7 +45,9 @@ function gf_button_shortcode( $shortcode_string, $attributes, $content ){
 		return 'Missing the ID attribute.';
 	}
 
-	gravity_form_enqueue_scripts( $a['id'], true );
+	// Enqueue the scripts and styles
+	gravity_form_enqueue_scripts( $form_id, true );
+
 	$ajax_url = admin_url( 'admin-ajax.php' );
 
 	$html = sprintf( '<button id="gf_button_get_form_%d">%s</button>', $form_id, $a['text'] );
