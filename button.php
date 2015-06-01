@@ -58,7 +58,7 @@ function gf_button_shortcode( $shortcode_string, $attributes, $content ){
 					var button = $(this);
 					$.get('{$ajax_url}?action=gf_button_get_form&form_id={$form_id}',function(response){
 						$('#gf_button_form_container_{$form_id}').html(response).fadeIn();
-						//button.remove();
+						button.remove();
 						if(window['gformInitDatepicker']) {gformInitDatepicker();}
 					});
 				});
