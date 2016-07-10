@@ -37,6 +37,7 @@ function gf_button_shortcode( $shortcode_string, $attributes, $content ){
 	$a = shortcode_atts( array(
 		'id' => 0,
 		'text' => 'Show me the form!',
+		'button_class' => ''
 	), $attributes );
 
 	$form_id = absint( $a['id'] );
@@ -50,7 +51,7 @@ function gf_button_shortcode( $shortcode_string, $attributes, $content ){
 
 	$ajax_url = admin_url( 'admin-ajax.php' );
 
-	$html = sprintf( '<button id="gf_button_get_form_%d">%s</button>', $form_id, $a['text'] );
+	$html = sprintf( '<button id="gf_button_get_form_%d" class="%s">%s</button>', $form_id, $a['button_class'], $a['text'] );
 	$html .= sprintf( '<div id="gf_button_form_container_%d" style="display:none;"></div>', $form_id );
 	$html .= "<script>
 				(function (SHFormLoader, $) {
