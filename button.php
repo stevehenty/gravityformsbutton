@@ -3,7 +3,7 @@
 Plugin Name: Gravity Forms Button - An Ajax Form Loader
 Plugin URI: http://www.stevenhenty.com
 Description: Load Gravity Forms at the touch of a button. Shortcode usage: [gravityforms action="button" id=1 text="button text"]
-Version: 0.1
+Version: 0.2
 Author: stevehenty
 Author URI: http://www.stevenhenty.com
 
